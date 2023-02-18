@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Fragment.IntroFragment3">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/earthquake"
+            android:layout_marginBottom="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+            android:id="@+id/linearLayout1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|top"
+            android:layout_marginTop="50dp"
+            android:elevation="10dp"
+            android:gravity="center|top"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="17dp"
+                android:layout_height="5dp"
+                android:layout_marginEnd="5dp"
+                android:elevation="10dp"
+                android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="50dp" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="17dp"
+                android:layout_height="5dp"
+                android:layout_marginEnd="5dp"
+                android:elevation="10dp"
+                android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="50dp" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="50dp"
+                android:layout_height="5dp"
+                android:elevation="10dp"
+                android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar"
+                app:cardBackgroundColor="@color/PrimaryColor"
+                app:cardCornerRadius="50dp" />
+        </LinearLayout>
+
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="500dp"
+            android:src="@drawable/gradient2"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/liftingText">
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="30dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/turkey" />
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="30dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/algeria"
+                android:layout_marginStart="25dp"
+                android:layout_marginEnd="25dp"
+                />
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="30dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/syria" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/liftingText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Doing good today will be multiplied in the future"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            android:textAlignment="center"
+            android:fontFamily="@font/poppins_bold"
+            app:layout_constraintBottom_toTopOf="@+id/SecondText"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+        <TextView
+            android:id="@+id/SecondText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="let's set aside just 10DZD for the people out\nthere who are being hit by disaster"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            android:textAlignment="center"
+            android:fontFamily="@font/poppins_regular"
+            android:layout_marginBottom="30dp"
+            app:layout_constraintBottom_toTopOf="@+id/DonateBTN"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/DonateBTN"
+            android:layout_width="300dp"
+            android:layout_height="60dp"
+            android:layout_marginBottom="50dp"
+            app:cardCornerRadius="20dp"
+            android:elevation="10dp"
+            app:cardBackgroundColor="@color/PrimaryColor"
+            app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Donate now"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:textAlignment="center"
+                android:fontFamily="@font/poppins_semibold"
+                android:layout_gravity="center"
+                android:gravity="center"/>
+        </com.google.android.material.card.MaterialCardView>
+
+        <LinearLayout
+            android:id="@+id/linearLayout2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:gravity="center"
+            android:layout_marginBottom="10dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="center|end"
+                android:gravity="center|start"
+                android:layout_weight="1"
+                android:layout_marginStart="15dp">
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_baseline_navigate_next_24"
+                    app:tint="@color/white"
+                    android:layout_gravity="center"
+                    android:rotation="180"
+                    android:layout_marginBottom="2dp"/>
+                <TextView
+                    android:id="@+id/BackBTN"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="back"
+                    android:textSize="18sp"
+                    android:textColor="@color/white"
+                    android:fontFamily="@font/poppins_medium"
+                    android:gravity="center"
+                    android:layout_gravity="center"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</FrameLayout>

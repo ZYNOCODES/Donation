@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Fragment.AccountFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="85dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center|top"
+            android:gravity="center|top"
+            android:orientation="vertical">
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/PhotoContainer"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_marginTop="30dp"
+                android:elevation="10dp"
+                app:cardCornerRadius="150dp">
+
+                <ImageView
+                    android:id="@+id/PatientPhoto"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:src="@drawable/user"
+                    android:layout_gravity="center"
+                    app:tint="@color/PrimaryColor" />
+            </com.google.android.material.card.MaterialCardView>
+
+            <TextView
+                android:id="@+id/PatientName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/catamaran_medium"
+                android:maxWidth="300dp"
+                android:text="zine eddine boumrar"
+                android:textAlignment="center"
+                android:textAllCaps="true"
+                android:textColor="@color/PrimaryText"
+                android:textSize="22sp" />
+
+            <LinearLayout
+                android:id="@+id/linearLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="80dp"
+                android:layout_marginBottom="25dp"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="20dp"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="start|center"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/catamaran_medium"
+                        android:gravity="start|center"
+                        android:paddingStart="10dp"
+                        android:text="About me"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/SecondaryText"
+                        android:textSize="24sp" />
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:src="@drawable/ic_baseline_navigate_next_24"
+                        app:tint="@color/SecondaryText" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="20dp"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="start|center"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/catamaran_medium"
+                        android:gravity="start|center"
+                        android:paddingStart="10dp"
+                        android:text="Payment"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/SecondaryText"
+                        android:textSize="24sp" />
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:src="@drawable/ic_baseline_navigate_next_24"
+                        app:tint="@color/SecondaryText" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="20dp"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="start|center"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/catamaran_medium"
+                        android:gravity="start|center"
+                        android:paddingStart="10dp"
+                        android:text="Restore password"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/SecondaryText"
+                        android:textSize="24sp" />
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:src="@drawable/ic_baseline_navigate_next_24"
+                        app:tint="@color/SecondaryText" />
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="10dp"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="start|center"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/catamaran_medium"
+                        android:gravity="start|center"
+                        android:paddingStart="10dp"
+                        android:text="Notifications"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/SecondaryText"
+                        android:textSize="24sp" />
+
+                        <CheckBox
+                            xmlns:android="http://schemas.android.com/apk/res/android"
+                            android:id="@+id/notificationCheckbox"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:button="@null"
+                            android:checked="false"
+                            android:clickable="false"
+                            android:drawableRight="@drawable/checkbox_selector"
+                            android:focusable="false"
+                            android:gravity="center" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="start|center"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/catamaran_medium"
+                        android:gravity="start|center"
+                        android:paddingStart="10dp"
+                        android:text="Dark mode"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/SecondaryText"
+                        android:textSize="24sp" />
+
+                    <CheckBox xmlns:android="http://schemas.android.com/apk/res/android"
+                        android:id="@+id/darkmodeCheckbox"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:button="@null"
+                        android:checked="false"
+                        android:clickable="false"
+                        android:drawableRight="@drawable/checkbox_selector"
+                        android:focusable="false"
+                        android:gravity="center" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+
+    </ScrollView>
+
+
+</FrameLayout>
