@@ -1,10 +1,10 @@
 package com.example.donationapp.Model;
 
 public class Card {
-    private String Title,TargetPrice,TargetPercent;
-    private int image;
-    private int Flag;
-    private int SliderPercent;
+    public String Title,TargetPrice,TargetPercent;
+    public int image;
+    public int Flag;
+    public int SliderPercent;
 
     public Card(String title, String targetPrice, String targetPercent, int image, int flag, int sliderPercent) {
         Title = title;
@@ -19,6 +19,13 @@ public class Card {
         Title = title;
         TargetPrice = targetPrice;
         TargetPercent = targetPercent;
+        this.image = image;
+        this.Flag = flag;
+    }
+
+    public Card(String title, String targetPrice, int image, int flag) {
+        Title = title;
+        TargetPrice = targetPrice;
         this.image = image;
         this.Flag = flag;
     }

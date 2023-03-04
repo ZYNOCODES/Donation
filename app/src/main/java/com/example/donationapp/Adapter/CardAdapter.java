@@ -17,7 +17,7 @@ import com.example.donationapp.ViewHolder.CardViewHolder;
 import java.util.ArrayList;
 
 public class CardAdapter extends RecyclerView.Adapter<CardViewHolder>{
-    ArrayList<Card> Cards; //list of data
+    ArrayList<Card> Cards;
     Context context;
 
     public CardAdapter(ArrayList<Card> cards, Context context) {
@@ -28,7 +28,7 @@ public class CardAdapter extends RecyclerView.Adapter<CardViewHolder>{
     @NonNull
     @Override
     public CardViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(R.layout.syria_card,parent,false);
+        View view = LayoutInflater.from(context).inflate(R.layout.card,parent,false);
         return new CardViewHolder(view);
     }
 
@@ -46,15 +46,7 @@ public class CardAdapter extends RecyclerView.Adapter<CardViewHolder>{
                 context.startActivity(i);
             }
         });
-        if(Cards.get(position).getTargetPercent().contains("25%")){
-            holder.SliderPercent.setMinimumWidth(25);
-        }else if(Cards.get(position).getTargetPercent().contains("50%")){
-            holder.SliderPercent.setMinimumWidth(50);
-        }else if(Cards.get(position).getTargetPercent().contains("75%")){
-            holder.SliderPercent.setMinimumWidth(75);
-        }else if(Cards.get(position).getTargetPercent().contains("95%")){
-            holder.SliderPercent.setMinimumWidth(95);
-        }
+
     }
 
     @Override

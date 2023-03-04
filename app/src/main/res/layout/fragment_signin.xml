@@ -58,8 +58,8 @@
                     android:textSize="15sp" />
 
                 <com.google.android.material.card.MaterialCardView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="300dp"
+                    android:layout_height="60dp"
                     android:elevation="10dp"
                     app:cardBackgroundColor="@color/transparent"
                     app:cardCornerRadius="10dp"
@@ -67,8 +67,8 @@
                     app:strokeWidth="1dp">
 
                     <EditText
-                        android:layout_width="300dp"
-                        android:layout_height="60dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
                         android:layout_gravity="center|start"
                         android:background="@color/transparent"
                         android:gravity="center|start"
@@ -99,8 +99,8 @@
                     android:textSize="15sp" />
 
                 <com.google.android.material.card.MaterialCardView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="300dp"
+                    android:layout_height="60dp"
                     android:elevation="10dp"
                     app:cardBackgroundColor="@color/transparent"
                     app:cardCornerRadius="10dp"
@@ -108,8 +108,8 @@
                     app:strokeWidth="1dp">
 
                     <EditText
-                        android:layout_width="300dp"
-                        android:layout_height="60dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
                         android:layout_gravity="center|start"
                         android:background="@color/transparent"
                         android:gravity="center|start"

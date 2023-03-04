@@ -6,9 +6,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".Fragment.MyDonationsFragment">
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -50,26 +47,24 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:layout_marginTop="10dp"
-                android:paddingStart="10dp">
+                android:layout_marginTop="10dp">
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="My donation"
                     android:textAlignment="center"
                     android:textSize="20sp"
+                    android:paddingStart="10dp"
                     android:textColor="@color/PrimaryText"
                     android:fontFamily="@font/poppins_semibold"/>
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/MyDonationRecycleView"
+                <ListView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:paddingBottom="85dp">
+                    android:id="@+id/AllDonationsListview">
 
-                </androidx.recyclerview.widget.RecyclerView>
+                </ListView>
             </LinearLayout>
 
         </LinearLayout>
-    </ScrollView>
 
 </FrameLayout>
