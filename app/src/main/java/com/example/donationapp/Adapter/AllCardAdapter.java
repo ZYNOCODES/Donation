@@ -1,5 +1,6 @@
 package com.example.donationapp.Adapter;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
@@ -46,15 +47,16 @@ public class AllCardAdapter extends RecyclerView.Adapter<CardViewHolder>{
                 context.startActivity(i);
             }
         });
-        if(Cards.get(position).getTargetPercent().contains("25%")){
-            holder.SliderPercent.setMinimumWidth(25);
-        }else if(Cards.get(position).getTargetPercent().contains("50%")){
-            holder.SliderPercent.setMinimumWidth(50);
-        }else if(Cards.get(position).getTargetPercent().contains("75%")){
-            holder.SliderPercent.setMinimumWidth(75);
-        }else if(Cards.get(position).getTargetPercent().contains("95%")){
-            holder.SliderPercent.setMinimumWidth(95);
-        }
+        holder.Delete.setOnClickListener(new View.OnClickListener() {
+            @SuppressLint("NotifyDataSetChanged")
+            @Override
+            public void onClick(View view) {
+                Card i = Cards.get(position);
+                Cards.remove(i);
+                notifyDataSetChanged();
+            }
+        });
+
     }
 
     @Override

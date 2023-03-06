@@ -1,5 +1,6 @@
 package com.example.donationapp.Adapter;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.donationapp.Model.Card;
 import com.example.donationapp.R;
+import com.google.android.material.card.MaterialCardView;
 
 import java.util.ArrayList;
 
@@ -45,11 +47,12 @@ public class ListViewAdapter extends BaseAdapter {
         ViewHolder holder;
         if (view == null) {
             holder = new ViewHolder();
-            view = LayoutInflater.from(context).inflate(R.layout.all_card, viewGroup, false);
+            view = LayoutInflater.from(context).inflate(R.layout.mydonation_card, viewGroup, false);
             holder.Title = view.findViewById(R.id.Title);
             holder.TargetPrice = view.findViewById(R.id.TargetPrice);
             holder.image = view.findViewById(R.id.image);
             holder.Flag = view.findViewById(R.id.Flag);
+            holder.Delete = view.findViewById(R.id.Delete);
             view.setTag(holder);
         }else {
             holder = (ViewHolder) view.getTag();
@@ -59,7 +62,15 @@ public class ListViewAdapter extends BaseAdapter {
         holder.TargetPrice.setText(Card.get(position).getTargetPrice());
         holder.image.setImageResource(Card.get(position).getImage());
         holder.Flag.setImageResource(Card.get(position).getFlag());
-
+        holder.Delete.setOnClickListener(new View.OnClickListener() {
+            @SuppressLint("NotifyDataSetChanged")
+            @Override
+            public void onClick(View view) {
+                Card i = Card.get(position);
+                Card.remove(i);
+                notifyDataSetChanged();
+            }
+        });
         return view;
     }
     class ViewHolder {
@@ -67,5 +78,6 @@ public class ListViewAdapter extends BaseAdapter {
         ImageView          Flag;
         TextView           Title;
         TextView           TargetPrice;
+        MaterialCardView   Delete;
     }
 }

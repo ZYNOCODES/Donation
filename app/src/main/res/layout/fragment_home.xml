@@ -170,15 +170,37 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:layout_marginTop="10dp">
-            <TextView
+                <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Syria"
-                android:paddingStart="10dp"
-                    android:textAlignment="center"
-                    android:textSize="20sp"
-                    android:textColor="@color/PrimaryText"
-                    android:fontFamily="@font/poppins_semibold"/>
+                    android:orientation="horizontal"
+                    android:layout_gravity="center|start"
+                    android:gravity="center">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Syria"
+                        android:paddingStart="10dp"
+                        android:textSize="20sp"
+                        android:textColor="@color/PrimaryText"
+                        android:fontFamily="@font/poppins_semibold"/>
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/AddSyria"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        app:cardCornerRadius="20dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginBottom="2dp"
+                        app:cardBackgroundColor="@color/PrimaryColor">
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/ic_baseline_add_24"
+                            android:padding="3dp"
+                            app:tint="@color/white"/>
+                    </com.google.android.material.card.MaterialCardView>
+                </LinearLayout>
+
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/SyriaRecycleView"
                     android:layout_width="match_parent"
@@ -191,16 +213,38 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:layout_marginTop="15dp">
-
-            <TextView
+                <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Turkey"
-                android:paddingStart="10dp"
-                    android:textAlignment="center"
-                    android:textSize="20sp"
-                    android:textColor="@color/PrimaryText"
-                    android:fontFamily="@font/poppins_semibold"/>
+                    android:orientation="horizontal"
+                    android:layout_gravity="center|start"
+                    android:gravity="center">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Turkey"
+                        android:paddingStart="10dp"
+                        android:textAlignment="center"
+                        android:textSize="20sp"
+                        android:textColor="@color/PrimaryText"
+                        android:fontFamily="@font/poppins_semibold"/>
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/AddTurkie"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        app:cardCornerRadius="20dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginBottom="2dp"
+                        app:cardBackgroundColor="@color/PrimaryColor">
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/ic_baseline_add_24"
+                            android:padding="3dp"
+                            app:tint="@color/white"/>
+                    </com.google.android.material.card.MaterialCardView>
+                </LinearLayout>
+
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/TurkeyRecycleView"
                     android:layout_width="match_parent"
@@ -213,15 +257,39 @@
                 android:layout_height="match_parent"
                 android:orientation="vertical"
                 android:layout_marginTop="15dp">
-                <TextView
+                <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="All"
-                    android:paddingStart="10dp"
-                    android:textAlignment="center"
-                    android:textSize="20sp"
-                    android:textColor="@color/PrimaryText"
-                    android:fontFamily="@font/poppins_semibold"/>
+                    android:orientation="horizontal"
+                    android:layout_gravity="center|start"
+                    android:gravity="center">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="All"
+                        android:paddingStart="10dp"
+                        android:textAlignment="center"
+                        android:textSize="20sp"
+                        android:textColor="@color/PrimaryText"
+                        android:fontFamily="@font/poppins_semibold"/>
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/AddAll"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        app:cardCornerRadius="20dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginBottom="2dp"
+                        app:cardBackgroundColor="@color/PrimaryColor">
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/ic_baseline_add_24"
+                            android:padding="3dp"
+                            app:tint="@color/white"/>
+                    </com.google.android.material.card.MaterialCardView>
+                </LinearLayout>
+
+
                 <androidx.recyclerview.widget.RecyclerView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"

@@ -5,6 +5,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.donationapp.R;
@@ -16,7 +17,7 @@ public class CardViewHolder extends RecyclerView.ViewHolder {
     public TextView TargetPercent;
     public ImageView image;
     public ImageView Flag;
-    public MaterialCardView SliderPercent;
+    public MaterialCardView SliderPercent,Delete;
     public CardViewHolder(@NonNull View itemView) {
         super(itemView);
         Title = itemView.findViewById(R.id.Title);
@@ -25,5 +26,6 @@ public class CardViewHolder extends RecyclerView.ViewHolder {
         image = itemView.findViewById(R.id.image);
         Flag = itemView.findViewById(R.id.Flag);
         SliderPercent = itemView.findViewById(R.id.SliderPercent);
+        Delete = itemView.findViewById(R.id.Delete);
     }
 }

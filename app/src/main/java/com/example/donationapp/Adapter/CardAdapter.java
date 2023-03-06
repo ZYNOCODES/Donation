@@ -1,5 +1,6 @@
 package com.example.donationapp.Adapter;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
@@ -44,6 +45,15 @@ public class CardAdapter extends RecyclerView.Adapter<CardViewHolder>{
             public void onClick(View view) {
                 Intent i = new Intent(context, CardDetailsActivity.class);
                 context.startActivity(i);
+            }
+        });
+        holder.Delete.setOnClickListener(new View.OnClickListener() {
+            @SuppressLint("NotifyDataSetChanged")
+            @Override
+            public void onClick(View view) {
+                Card i = Cards.get(position);
+                Cards.remove(i);
+                notifyDataSetChanged();
             }
         });
 
