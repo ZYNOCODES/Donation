@@ -142,6 +142,7 @@ public class HomeFragment extends Fragment {
                         &&((image1.isChecked()) || (image2.isChecked()) || (image3.isChecked()) || (image4.isChecked()))){
 
                     int flag = R.drawable.syria;
+
                     if (SyriaRadio.isChecked()){
                         flag = R.drawable.syria;
                     }else if (TurkieRadio.isChecked()){
@@ -149,14 +150,15 @@ public class HomeFragment extends Fragment {
                     }
 
                     int image = R.drawable.earthquake;
+
                     if (image1.isChecked()){
-                        flag = R.drawable.earthquake;
+                        image = R.drawable.earthquake;
                     }else if (image2.isChecked()){
-                        flag = R.drawable.earthquake1;
+                        image = R.drawable.earthquake1;
                     }else if (image3.isChecked()){
-                        flag = R.drawable.earthquake2;
+                        image = R.drawable.earthquake2;
                     }else if (image4.isChecked()){
-                        flag = R.drawable.child2;
+                        image = R.drawable.child2;
                     }
 
                     Card.add(new Card(TitleInput.getText().toString(),PriceInput.getText().toString(),image,flag));
