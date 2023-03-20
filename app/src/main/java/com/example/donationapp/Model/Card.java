@@ -1,6 +1,8 @@
 package com.example.donationapp.Model;
 
-public class Card {
+import java.util.ArrayList;
+
+public class Card extends ArrayList<Card> {
     public String Title,TargetPrice,TargetPercent;
     public int image;
     public int Flag;

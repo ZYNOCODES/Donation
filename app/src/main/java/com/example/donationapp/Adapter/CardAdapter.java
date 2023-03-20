@@ -34,7 +34,7 @@ public class CardAdapter extends RecyclerView.Adapter<CardViewHolder>{
     }
 
     @Override
-    public void onBindViewHolder(@NonNull CardViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull CardViewHolder holder, @SuppressLint("RecyclerView") int position) {
         holder.Title.setText(Cards.get(position).getTitle());
         holder.TargetPrice.setText(Cards.get(position).getTargetPrice());
         holder.TargetPercent.setText(Cards.get(position).getTargetPercent());

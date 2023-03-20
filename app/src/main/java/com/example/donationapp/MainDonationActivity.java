@@ -1,22 +1,31 @@
 package com.example.donationapp;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.graphics.PorterDuff;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.donationapp.Fragment.AccountFragment;
 import com.example.donationapp.Fragment.HomeFragment;
 import com.example.donationapp.Fragment.MyDonationsFragment;
+import com.example.donationapp.Model.Card;
+
+import java.util.ArrayList;
 
 public class MainDonationActivity extends AppCompatActivity {
     private LinearLayout DonationHome,MyDonation,Account;
     private ImageView DonationHome_ic,MyDonation_ic,Account_ic;
     private TextView DonationHome_txt,MyDonation_txt,Account_txt;
+    private ArrayList<ArrayList<ArrayList<Card>>> lists = new ArrayList<ArrayList<ArrayList<Card>>>();
+    private ArrayList<ArrayList<Card>> list = new ArrayList<ArrayList<Card>>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,6 +43,7 @@ public class MainDonationActivity extends AppCompatActivity {
         DonationHome_txt = findViewById(R.id.DonationHome_txt);
         MyDonation_txt = findViewById(R.id.MyDonation_txt);
         Account_txt = findViewById(R.id.Account_txt);
+
     }
     private  void IconsOnClickListener(){
         getSupportFragmentManager()
@@ -90,5 +100,11 @@ public class MainDonationActivity extends AppCompatActivity {
                 Account_txt.setTextColor(getColor(R.color.PrimaryColor));
             }
         });
+    }
+
+
+
+    public ArrayList<ArrayList<ArrayList<Card>>> getLists(){
+        return lists;
     }
 }

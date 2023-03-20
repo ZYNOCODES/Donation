@@ -1,13 +1,21 @@
 package com.example.donationapp.Fragment;
 
+import android.app.AlertDialog;
 import android.app.Dialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.view.ContextMenu;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
@@ -30,18 +38,19 @@ public class HomeFragment extends Fragment {
     private EditText PriceInput,TitleInput;
     private RadioButton SyriaRadio,TurkieRadio,image1,image2,image3,image4;
     private TextView btn_no,btn_yes;
+    private ArrayList<Card> card = new ArrayList<>();
+    private ArrayList<ArrayList<Card>> list = new ArrayList<>();
+    private ArrayList<ArrayList<ArrayList<Card>>> lists = new ArrayList<ArrayList<ArrayList<Card>>>();
+    private int[] index = new int[100];
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_home, container, false);
+        setHasOptionsMenu(true);
+
         InisializationOfFealds();
-
-        Syria();
-
-        Turkie();
-
-        All();
-
+        FetchList(lists.get(0),R.drawable.syria);
+        registerForContextMenu(view.findViewById(R.id.contextmenu));
         return view;
     }
     private void InisializationOfFealds(){
@@ -51,67 +60,123 @@ public class HomeFragment extends Fragment {
         AddAll = view.findViewById(R.id.AddAll);
         AddTurkie = view.findViewById(R.id.AddTurkie);
         AddSyria = view.findViewById(R.id.AddSyria);
+        for (int i = 0; i < 4; i++){
+            list.add(card);
+        }
+        for (int i = 0; i < 4; i++){
+            lists.add(list);
+        }
+
     }
-    private void Syria(){
-        ArrayList<Card> CardSyria = new ArrayList<>();
-        CardSyria.add(new Card("Reconstruction of children's schools","230000","50%",R.drawable.earthquake,R.drawable.syria));
-        CardSyria.add(new Card("donate for hunger people","50000","25%",R.drawable.earthquake1,R.drawable.syria));
-        CardSyria.add(new Card("Reconstruction of children's schools","650000","75%",R.drawable.earthquake2,R.drawable.syria));
-        CardSyria.add(new Card("donate for hunger people","1000000","95%",R.drawable.child2,R.drawable.syria));
-        CardSyria.add(new Card("Reconstruction of children's schools","90000","25%",R.drawable.child1,R.drawable.syria));
-        CardAdapter adaptersyria = new CardAdapter(CardSyria, getActivity());
-        SyriaRecycleView.setAdapter(adaptersyria);
+    private void Syria(ArrayList<ArrayList<Card>> list,int Flag){
+        ArrayList<Card> Cardsyria = new ArrayList<>();
+        if (list.get(0) != null){
+            Cardsyria.equals(list.get(0));
+            Cardsyria.add(new Card("Reconstruction of children's schools","230000","50%",R.drawable.earthquake,Flag));
+            Cardsyria.add(new Card("donate for hunger people","50000","25%",R.drawable.earthquake1,Flag));
+            Cardsyria.add(new Card("Reconstruction of children's schools","650000","75%",R.drawable.earthquake2,Flag));
+            Cardsyria.add(new Card("donate for hunger people","1000000","95%",R.drawable.child2,Flag));
+            Cardsyria.add(new Card("Reconstruction of children's schools","90000","25%",R.drawable.child1,Flag));
+            CardAdapter adaptersyria = new CardAdapter(Cardsyria, getActivity());
+            SyriaRecycleView.setAdapter(adaptersyria);
 
-        LinearLayoutManager managersyria = new LinearLayoutManager(getActivity(),LinearLayoutManager.HORIZONTAL,false);
-        SyriaRecycleView.setLayoutManager(managersyria);
+            LinearLayoutManager managersyria = new LinearLayoutManager(getActivity(),LinearLayoutManager.HORIZONTAL,false);
+            SyriaRecycleView.setLayoutManager(managersyria);
 
-        AddSyria.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                openDialog(CardSyria);
+            AddSyria.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    openDialog(Cardsyria);
+                }
+            });
+        }else {
+            AddSyria.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    openDialog(Cardsyria);
+                }
+            });
+            CardAdapter adaptersyria = new CardAdapter(Cardsyria, getActivity());
+            SyriaRecycleView.setAdapter(adaptersyria);
 
-            }
-        });
+            LinearLayoutManager managersyria = new LinearLayoutManager(getActivity(),LinearLayoutManager.HORIZONTAL,false);
+            SyriaRecycleView.setLayoutManager(managersyria);
+        }
+
     }
-    private void Turkie(){
+    private void Turkie(ArrayList<ArrayList<Card>> list,int Flag){
         ArrayList<Card> CardTurkey = new ArrayList<>();
-        CardTurkey.add(new Card("Reconstruction of children's schools","230000","50%",R.drawable.child2,R.drawable.turkey));
-        CardTurkey.add(new Card("donate for hunger people","50000","25%",R.drawable.earthquake,R.drawable.turkey));
-        CardTurkey.add(new Card("Reconstruction of children's schools","650000","75%",R.drawable.earthquake1,R.drawable.turkey));
-        CardTurkey.add(new Card("donate for hunger people","1000000","95%",R.drawable.earthquake2,R.drawable.turkey));
-        CardTurkey.add(new Card("Reconstruction of children's schools","90000","25%",R.drawable.child1,R.drawable.turkey));
-        CardAdapter adapterturkey = new CardAdapter(CardTurkey, getActivity());
-        TurkeyRecycleView.setAdapter(adapterturkey);
+        if (list.get(1) != null){
+            CardTurkey.equals(list.get(1));
+            CardTurkey.add(new Card("Reconstruction of children's schools","230000","50%",R.drawable.child2,Flag));
+            CardTurkey.add(new Card("donate for hunger people","50000","25%",R.drawable.earthquake,Flag));
+            CardTurkey.add(new Card("Reconstruction of children's schools","650000","75%",R.drawable.earthquake1,Flag));
+            CardTurkey.add(new Card("donate for hunger people","1000000","95%",R.drawable.earthquake2,Flag));
+            CardTurkey.add(new Card("Reconstruction of children's schools","90000","25%",R.drawable.child1,Flag));
+            CardAdapter adapterturkey = new CardAdapter(CardTurkey, getActivity());
+            TurkeyRecycleView.setAdapter(adapterturkey);
 
-        LinearLayoutManager managerturkey = new LinearLayoutManager(getActivity(),LinearLayoutManager.HORIZONTAL,false);
-        TurkeyRecycleView.setLayoutManager(managerturkey);
+            LinearLayoutManager managerturkey = new LinearLayoutManager(getActivity(),LinearLayoutManager.HORIZONTAL,false);
+            TurkeyRecycleView.setLayoutManager(managerturkey);
 
-        AddTurkie.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                openDialog(CardTurkey);
-            }
-        });
+            AddTurkie.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    openDialog(CardTurkey);
+                }
+            });
+        }else {
+            CardAdapter adapterturkey = new CardAdapter(CardTurkey, getActivity());
+            TurkeyRecycleView.setAdapter(adapterturkey);
+
+            LinearLayoutManager managerturkey = new LinearLayoutManager(getActivity(),LinearLayoutManager.HORIZONTAL,false);
+            TurkeyRecycleView.setLayoutManager(managerturkey);
+
+            AddTurkie.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    openDialog(CardTurkey);
+                }
+            });
+        }
+
     }
-    private void All(){
+    private void All(ArrayList<ArrayList<Card>> list,int Flag){
         ArrayList<Card> AllCards = new ArrayList<>();
-        AllCards.add(new Card("Reconstruction of children's schools","230000","50%",R.drawable.child2,R.drawable.turkey));
-        AllCards.add(new Card("donate for hunger people","50000","25%",R.drawable.earthquake,R.drawable.syria));
-        AllCards.add(new Card("Reconstruction of children's schools","650000","75%",R.drawable.earthquake1,R.drawable.syria));
-        AllCards.add(new Card("donate for hunger people","1000000","95%",R.drawable.earthquake2,R.drawable.turkey));
-        AllCards.add(new Card("Reconstruction of children's schools","90000","25%",R.drawable.child1,R.drawable.syria));
-        AllCardAdapter adapter = new AllCardAdapter(AllCards, getActivity());
-        AllDonationsRecycleView.setAdapter(adapter);
+        if (list.get(2) != null){
+            AllCards.equals(list.get(2));
+            AllCards.add(new Card("Reconstruction of children's schools","230000","50%",R.drawable.child2,Flag));
+            AllCards.add(new Card("donate for hunger people","50000","25%",R.drawable.earthquake,Flag));
+            AllCards.add(new Card("Reconstruction of children's schools","650000","75%",R.drawable.earthquake1,Flag));
+            AllCards.add(new Card("donate for hunger people","1000000","95%",R.drawable.earthquake2,Flag));
+            AllCards.add(new Card("Reconstruction of children's schools","90000","25%",R.drawable.child1,Flag));
+            AllCardAdapter adapter = new AllCardAdapter(AllCards, getActivity());
+            AllDonationsRecycleView.setAdapter(adapter);
 
-        LinearLayoutManager manager = new LinearLayoutManager(getActivity(),LinearLayoutManager.VERTICAL,false);
-        AllDonationsRecycleView.setLayoutManager(manager);
+            LinearLayoutManager manager = new LinearLayoutManager(getActivity(),LinearLayoutManager.VERTICAL,false);
+            AllDonationsRecycleView.setLayoutManager(manager);
 
-        AddAll.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                openDialog(AllCards);
-            }
-        });
+            AddAll.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    openDialog(AllCards);
+                }
+            });
+        }else {
+            AllCardAdapter adapter = new AllCardAdapter(AllCards, getActivity());
+            AllDonationsRecycleView.setAdapter(adapter);
+
+            LinearLayoutManager manager = new LinearLayoutManager(getActivity(),LinearLayoutManager.VERTICAL,false);
+            AllDonationsRecycleView.setLayoutManager(manager);
+
+            AddAll.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    openDialog(AllCards);
+                }
+            });
+        }
+
     }
     public void openDialog(ArrayList<Card> Card) {
         Dialog dialog = new Dialog(getActivity(),R.style.CustomDialogTheme);
@@ -181,5 +246,88 @@ public class HomeFragment extends Fragment {
 
         dialog.show();
     }
+    public void FetchList(ArrayList<ArrayList<Card>> listNumber,int Flag){
+        Syria(listNumber,Flag);
+        Turkie(listNumber,Flag);
+        All(listNumber,Flag);
+    }
 
+    @Override
+    public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater) {
+        getActivity().getMenuInflater().inflate(R.menu.menu,menu);
+        super.onCreateOptionsMenu(menu, inflater);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.AddNewList:
+                ArrayList<ArrayList<Card>> list = new ArrayList<>();
+                for (int i = 0; i < 4; i++){
+                    list.add(null);
+                }
+                lists.add(list);
+                FetchList(lists.get(lists.size()-1),R.drawable.syria);
+                Toast.makeText(getActivity(),"List number "+String.valueOf(lists.size())+" Added",Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.DeleteCurrentList:
+                if (lists.size() > 1){
+                    AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+                    builder.setMessage("you really want to delete!!");
+                    builder.setTitle("Delete");
+                    builder.setPositiveButton("yes", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+                            lists.remove(lists.size()-1);
+                            FetchList(lists.get(lists.size()-1),R.drawable.syria);
+                            Toast.makeText(getActivity(),"list number "+String.valueOf(lists.size()+1)+" was deleted",Toast.LENGTH_SHORT).show();
+                        }
+                    });
+                    builder.setNegativeButton("no", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+                            builder.setCancelable(true);
+                        }
+                    });
+
+                    builder.show();
+                }
+                break;
+            case R.id.about:
+                AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+                builder.setMessage("Donation app developee par vous ;)");
+                builder.setTitle("A propos");
+                builder.setNeutralButton("ok",null);
+                builder.show();
+                break;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onCreateContextMenu(@NonNull ContextMenu menu, @NonNull View v, @Nullable ContextMenu.ContextMenuInfo menuInfo) {
+        for (int i = 0; i < lists.size(); i++){
+            MenuItem menu3 = menu.add(Menu.NONE, index[i]=i, i, "list "+(i+1));
+            menu3.setAlphabeticShortcut('c');
+        }
+
+        getActivity().getMenuInflater().inflate(R.menu.contextmenu,menu);
+        super.onCreateContextMenu(menu, v, menuInfo);
+    }
+
+    @Override
+    public boolean onContextItemSelected(@NonNull MenuItem item) {
+        for (int i = 0; i < lists.size(); i++) {
+            if (item.getItemId() == index[i]){
+                if (( i % 2 ) == 0){
+                    FetchList(lists.get(i),R.drawable.syria);
+                    Toast.makeText(getActivity(),"List "+(i+1),Toast.LENGTH_SHORT).show();
+                }else{
+                    FetchList(lists.get(i),R.drawable.turkey);
+                    Toast.makeText(getActivity(),"List "+(i+1),Toast.LENGTH_SHORT).show();
+                }
+            }
+        }
+        return super.onContextItemSelected(item);
+    }
 }

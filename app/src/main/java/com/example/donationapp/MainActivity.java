@@ -1,8 +1,11 @@
 package com.example.donationapp;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 
 import com.example.donationapp.Fragment.HomeFragment;
 import com.example.donationapp.Fragment.IntroFragment1;
@@ -17,4 +20,6 @@ public class MainActivity extends AppCompatActivity {
                 .beginTransaction()
                 .replace(R.id.IntroFragmentContainer,new IntroFragment1()).commit();
     }
+
+
 }

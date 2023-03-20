@@ -95,6 +95,7 @@
                 android:layout_gravity="center"
                 app:cardBackgroundColor="@color/thirdText">
                 <LinearLayout
+                    android:id="@+id/contextmenu"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="horizontal">
