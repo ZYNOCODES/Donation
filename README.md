@@ -1,0 +1,2 @@
+# RecyclerView-ListView-Add-Update-Delete-
+This GitHub repository contains an Android application that demonstrates the use of RecyclerView and ListView components. The app allows users to view a list of items, add new items to the list, delete existing items, and update the content of the list as needed. Through this app, developers can gain an understanding of how to implement RecyclerView and ListView in their own Android projects, as well as how to use these components to create dynamic and responsive user interfaces.
